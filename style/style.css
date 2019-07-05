@@ -18,7 +18,7 @@ canvas {
 }
 
 body{
-  max-width: 1440px;
+  max-width: 100%;
   width: 100%;
   margin: 0 auto;
   font-size: 1em;
@@ -28,280 +28,123 @@ body{
 
 header {
   height: 48px;
-  box-shadow: 0px 8px 5px 0px #9e999e;
-  margin-bottom: 79px;
+  background: #2D2D2D;
   line-height: 46px;
 }
 
 h1{
   font-size: 1.500em;
-  color: #212121;
+  color: white;
   vertical-align: middle;
   padding-left: 29px;
 }
 
-main {
+.main {
+  height: 400px;
+  background: #525252;
   display: grid;
-  grid-template-columns: 29px 200px 200px 750px 150px;
-  grid-template-rows: 20px 240px 240px;
+  grid-template-columns: 200px 30% 30px 1fr ;
+  grid-template-rows: 10px 1fr 1fr;
   grid-template-areas:
-  ". tools frames canvas preview"
-  ". . frames canvas ."
-  ". colors frames canvas ."
-  ". . frames . .";
-
+  ". . . ."
+  ". description . image-block  "
+  ". description . image-block ";
+ 
 }
-.tools, .colors{
-  width: 150px;
-  height: 248px;
-  box-shadow: 0px 5px 5px 1px rgba(161,158,161,1);
-}
-.tools {
-  grid-area: tools;
+.description {
+  width: 100%;
+  display: inline-block; 
+  grid-area: description;
+  padding-top: 40px;
 }
 
-.colors{
-  grid-area: colors;
-}
 
-.frames{
-grid-area: frames;
-}
-
-.canvas{
-  grid-area: canvas;
-
-  width: 735px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-
-}
-
-.canvasElem{
-  width: 238px;
-  height: 238px;
-  background-color: #9e999e;
-  margin-bottom: 10px;
-}
-
-.tool , .color{
-  height: 40px;
-  padding-left: 16px;
-  vertical-align: middle;
-  line-height: 43px;
-}
-
-.color {
-  position: relative;
-  z-index: 2;
-}
-
-hr{
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.tool:nth-child(1){
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.tool img{
-  vertical-align: middle;
-}
-
-.circle{
+.description p { 
+  color: white;
+  font-size: 25px;
   display: inline-block;
-  height: 20px;
-  width: 20px;
-  border: 1px solid black;
-  border-radius: 10px;
-  vertical-align: middle;
 }
 
-.bucketClick {
-  cursor: url();
-}
-
-
-.color-picker{
-  width: 30px;
-  height: 30px;
-  border: 3px solid gray;
-}
-
-.primary-color{
-  background-color: black;
-  position: absolute;
-}
-.secondary-color {
-  background-color: white;
-  position: absolute;
-  top: -22px;
-  left: 30px;
-
-}
-.canvasElem:nth-child(2){
-  background-color: blue;
-}
-
-.circle-canvas{
-  border-radius: 122px;
-}
-
-.canvContainer{
-  width: 238px;
-  height: 238px;
+.description p:first-child {
+  font-size: 35px;
   padding-bottom: 10px;
+  
 }
-.frame-child{
-height: 50px;
-width: 50px;
-display: inline-block;
-margin: 0!important;
-padding: 0!important;
-background: rgb(221, 218, 218);
-margin-right: 5px!important;
+.description p:nth-child(2) { 
+  padding-bottom: 15px;
 }
 
-
-
-.frame{
-width: 170px;
-margin-bottom: 10px;
-position: relative;
+.description a {
+  height: 40px;
+  line-height: 50px;
+  background: gold;
+  font-size: 2em;
+  text-shadow: none;
+  white-space: nowrap;  
+  display: inline-block;  
+  line-height: 35px;
+  padding: 0 10px;
+  border-style: none;
+  border-radius: 2px;
+  cursor: pointer; 
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  background-color: gold;
+  transition: 0.3s background-color;
 }
-.preview {
-  grid-area: preview;
-}
-#canvas-area{
 
+.description a:hover {
 background: white;
-border: 5px solid rgb(221, 218, 218);;
 }
 
 
-.frame1, .frame2, .frame3 {
-border: 2px solid black;
-
-
-}
-
-.btn {
-background: none;
-border:none;
-cursor: pointer;
-position: absolute;
-font-size: 19px;
-
-}
-.btn-delete {
-
-right: 10px;
-top: 5px;
-}
-
-.btn-copy {
-  position: absolute;
-right: 5px;
-bottom: 5px;
-cursor: pointer;
-}
-.btn-copy img {
-// width: 19px!important;
-// position: absolute;
-// right: 5px;
-// bottom: 5px;
-}
-
-.btn-add {
-position: unset;
-left: 2px;
-bottom: 2px;
-width: 114px;
-}
-
-
-#runAnim, #frameRate, #fullscreen  {
- width: 160px;
-}
-
-#runAnim, .btn-add, #fullscreen, #setPixelCount{
-font-size: 17px;
- background: white;
- cursor: pointer;
- box-shadow: 0px 5px 5px 1px rgba(161,158,161,1);
- height: 50px;
- margin-bottom: 10px;
-}
-#fullscreen {
-  width: 114px;
-}
-#frameRate, #pixelCount{
- margin-top: 10px;
- border: none;
- box-shadow: 0px 5px 5px 1px rgba(161,158,161,1);
- height: 48px;
-
- text-align: center;
-}
-#pixelCount {
-  width: 160px
-}
-#setPixelCount {
-  width: 160px
-}
-input::placeholder{
-
- color: #d6d4d6
-
-}
-
-
-.color-list {
-  width: 100px;
-  height: 100px;
-  background: black;
-  z-index: 1000;
-  position: relative;
-  top: -100px;
-  right: -10px;
-  border: 3px solid gray;
-
-}
-
-.color-list-elem {
-  width: 95px;
-  height: 20px;
-  padding-right: 5px;
+.program-image{  
+  width: 500px;  
   display: inline-block;
-  display: none;
+  grid-area: image-block;
 }
 
-.visible {
-  display: block;
+.program-image img{
+  width: 690px;  
+  display: inline-block;
 }
 
-.canvasSmall {
-
-  display: block;
-  border-radius: 7px;
+.examples {
+  margin: 0 auto;
+  color: white;
+  background: #212121;
+  height: 300px;
+  width: 100%;
 }
 
-.frameContainer {
-  position: relative;
-  width: 110px;
-  height: 110px;;
-  position: relative;
-  border-radius: 7px;
-  margin-bottom: 8px;
+.examples-block{
+  margin:0 auto;
+  max-width: 700px;
+  width: 100%;
+  padding-top: 30px;
 }
 
-.frameContainer:hover{
-  box-shadow: 0px 1px 0px 5px rgba(175, 175, 174, 0.99);
+.examples-block p:nth-child(1){
+  font-size: 30px;
+  margin-bottom: 10px;
 }
 
-.active {
-  box-shadow: 0px 1px 0px 5px rgba(255, 238, 0, 0.99);
+.example-block-gifs img{
+  width: 160px;
+  display: inline-block;
+  padding-top: 10px;
+}
+
+@media screen and (max-width:1440px){
+  .main {
+    grid-template-columns: 20px 30% 30px 1fr ;
+    grid-template-rows: 10px 1fr 1fr;
+    grid-template-areas:
+    ". . . ."
+    ". description . image-block  "
+    ". description . image-block ";
+   
+  }
 }
